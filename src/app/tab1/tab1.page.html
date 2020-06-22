@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Make Lists</ion-title>
     </ion-toolbar>
   </ion-header>
 
@@ -19,26 +19,29 @@
 
 
 
-  <ion-button (click)="setStorage()">Set Name</ion-button>
-  <ion-button (click)="readStorage()">Read Name</ion-button>
-  <ion-button (click)="pushToArray()">Save to Array</ion-button>
+  <!-- <ion-button (click)="setStorage()">Set Name</ion-button> -->
+  <ion-button (click)="readStorage()">Check Current List</ion-button>
+  <!-- <ion-button (click)="pushToArray()">Save to Array</ion-button> -->
   <ion-button (click)="resetStorage()" color="danger">RESET</ion-button>
   
   <ion-item>
-  <ion-input *ngIf="captionEntrySpotIsVisible" type="text" placeholder="Enter the name of your list"  (keyup.enter)="setCaption()" [(ngModel)]="listCaption"></ion-input>
-  <ion-button (click)="editCaption()" color="tertiary">EDIT LIST CAPTION</ion-button>
+    <ion-input *ngIf="captionEntrySpotIsVisible" type="text" placeholder="Enter listname" (keyup.enter)="setCaption()" [(ngModel)]="listCaption"></ion-input>
+    <!-- <ion-input type="text" placeholder="Enter listname" (keyup.enter)="setCaption()" [(ngModel)]="listCaption"></ion-input> -->
+    <ion-button (click)="editCaption()" color="tertiary">EDIT CAPTION</ion-button>
   <ion-button (click)="addList()" color="secondary">ADD LIST</ion-button>
 </ion-item>
 
   <ion-input #input type="text" placeholder="Enter an item" (keyup.enter)="pushToArray()" [(ngModel)]="enteredValue"></ion-input>  
  
 
-<ion-badge>{{listName}}</ion-badge>
+<!-- <ion-badge>{{listName}}</ion-badge> -->
 
-<ion-card color="tertiary">
+<ion-card>
+  
   <ion-card-title>{{caption}}</ion-card-title>
-    
+
  <ion-item *ngFor="let item of values">
+  <!-- <ion-input type="text">{{item}}</ion-input> -->
   <ion-label>{{item}}</ion-label>
   <ion-button (click)="toTab3()" color="warning">EDIT</ion-button>
 </ion-item>
@@ -47,10 +50,10 @@
 
 
 
-<ion-item-sliding>
+<!-- <ion-item-sliding>
   <ion-item-options side="start">
     <ion-item-option (click)="favorite(item)">Favorite</ion-item-option>
-    <!-- <ion-item-option color="danger" (click)="share(item)">Share</ion-item-option> -->
+   <ion-item-option color="danger" (click)="share(item)">Share</ion-item-option> 
   </ion-item-options>
 
   <ion-item>
@@ -60,7 +63,7 @@
   <ion-item-options side="end">
     <ion-item-option (click)="unread(item)">+</ion-item-option>
   </ion-item-options>
-</ion-item-sliding>
+</ion-item-sliding> -->
 
 
 

@@ -5,5 +5,18 @@
 </ion-header>
 
 <ion-content>
+  <ion-button (click)="toTab1()">Main Page</ion-button>
+
+  <ion-card>
+    <ion-card-title>
+      {{caption}}
+    </ion-card-title>
+    <ion-item *ngFor="let item of editCaption">
+      <ion-label>{{item}}</ion-label>
+    </ion-item>
+
+<ion-item>{{itemToEdit}}</ion-item>
+    
+  </ion-card>
 
 </ion-content>
